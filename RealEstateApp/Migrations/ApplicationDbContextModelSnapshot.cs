@@ -22,33 +22,51 @@ namespace RealEstateApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("RealEstateApp.Models.InstitutionalUser", b =>
+            modelBuilder.Entity("AddressUser", b =>
                 {
+                    b.Property<int>("AddressesId")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<string>("InstitutionalDocument")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("AddressesId", "UserId");
 
-                    b.Property<string>("InstitutionalMail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("UserId");
 
-                    b.Property<string>("InstitutionalName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InstitutionalPhone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("InstitutionalUsers");
+                    b.ToTable("AddressUser");
                 });
 
-            modelBuilder.Entity("RealEstateApp.Models.Users", b =>
+            modelBuilder.Entity("RealEstateApp.Models.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("DefinitionAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("District")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Address");
+                });
+
+            modelBuilder.Entity("RealEstateApp.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,6 +79,10 @@ namespace RealEstateApp.Migrations
 
                     b.Property<DateTime>("CreatedDataTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -84,23 +106,46 @@ namespace RealEstateApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
                 });
 
             modelBuilder.Entity("RealEstateApp.Models.InstitutionalUser", b =>
                 {
-                    b.HasOne("RealEstateApp.Models.Users", "Users")
-                        .WithOne("Institutionals")
-                        .HasForeignKey("RealEstateApp.Models.InstitutionalUser", "UserId")
+                    b.HasBaseType("RealEstateApp.Models.User");
+
+                    b.Property<string>("InstitutionalDocument")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstitutionalMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstitutionalName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InstitutionalPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("InstitutionalUser");
+                });
+
+            modelBuilder.Entity("AddressUser", b =>
+                {
+                    b.HasOne("RealEstateApp.Models.Address", null)
+                        .WithMany()
+                        .HasForeignKey("AddressesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("RealEstateApp.Models.Users", b =>
-                {
-                    b.Navigation("Institutionals")
+                    b.HasOne("RealEstateApp.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

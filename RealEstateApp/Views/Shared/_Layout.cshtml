@@ -1,49 +1,303 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RealEstateApp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RealEstateApp.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GARO ESTATE | Home page</title>
+    <meta name="description" content="GARO is a real-estate template">
+    <meta name="author" content="Kimarotec">
+    <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Place favicon.ico  the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontello.css">
+    <link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+    <link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/icheck.min_all.css">
+    <link rel="stylesheet" href="assets/css/price-range.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RealEstateApp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <!-- Body content -->
+
+
+    <div class="header-connect">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-8  col-xs-12">
+                    <div class="header-half header-call">
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
+                    <div class="header-half header-social">
+                        <ul class="list-inline">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vine"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
+    </div>
+    <!--End top header -->
+
+    <nav class="navbar navbar-default ">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo2.png" alt=""></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse yamm" id="navigation">
+                <div class="button navbar-right">
+                    <button class="navbar-btn nav-button wow bounceInRight login" style="background-color:dodgerblue;" onclick=" window.open('register.html')" data-wow-delay="0.4s">Giriş Yap</button>
+                    <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Ücretsiz İlan Ver</button>
+                </div>
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                        <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Satılık<b class="caret"></b></a>
+                        <ul class="dropdown-menu navbar-nav" s>
+                            <li>
+                                <a href="index-2.html">Konut</a>
+                            </li>
+                            <li>
+                                <a href="index-3.html">İş Yeri</a>
+                            </li>
+                            <li>
+                                <a href="index-4.html">Arsa</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                        <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Kiralık<b class="caret"></b></a>
+                        <ul class="dropdown-menu navbar-nav">
+                            <li>
+                                <a href="index-2.html">Konut</a>
+                            </li>
+                            <li>
+                                <a href="index-3.html">İş Yeri</a>
+                            </li>
+                            <li>
+                                <a href="index-4.html">Arsa</a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                        <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Emlak Haberleri<b class="caret"></b></a>
+                    </li>
+
+                    <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                        <a href="index.html" class="dropdown-toggle active" data-delay="200">Kurumsal Üyelik<b class="caret"></b></a>
+                    </li>
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- End of nav bar -->
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+
+
+
+    <!-- Footer area-->
+    <div class="footer-area">
+
+        <div class=" footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                        <div class="single-footer">
+                            <h4>Hakkımızda </h4>
+                            <div class="footer-title-line"></div>
+
+                            <img src="assets/img/logo2.png" alt="" class="wow pulse" data-wow-delay="1s">
+                            <p></p>
+                            <ul class="footer-adress">
+                                <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>
+                                <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                        <div class="single-footer">
+                            <h4>Quick links </h4>
+                            <div class="footer-title-line"></div>
+                            <ul class="footer-menu">
+                                <li><a href="properties.html">Properties</a>  </li>
+                                <li><a href="#">Services</a>  </li>
+                                <li><a href="submit-property.html">Submit property </a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="faq.html">fqa</a>  </li>
+                                <li><a href="faq.html">Terms </a>  </li>
+                            </ul>
+                        </div>
+                    </div>-->
+                    <div class="col-md-3 col-sm-6 wow fadeInRight animated" style="width:400px;">
+                        <div class="single-footer">
+                            <h4>En son haberler</h4>
+                            <div class="footer-title-line"></div>
+                            <ul class="footer-blog">
+                                <li>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                                        <a href="single.html">
+                                            <img src="assets/img/demo/small-proerty-2.jpg">
+                                        </a>
+                                        <span class="blg-date">12-12-2016</span>
+
+                                    </div>
+                                    <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
+                                        <h6> <a href="single.html">Add news functions </a></h6>
+                                        <p style="line-height: 17px; padding: 8px 2px;">Lorem ipsum dolor sit amet, nulla ...</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                                        <a href="single.html">
+                                            <img src="assets/img/demo/small-proerty-2.jpg">
+                                        </a>
+                                        <span class="blg-date">12-12-2016</span>
+
+                                    </div>
+                                    <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
+                                        <h6> <a href="single.html">Add news functions </a></h6>
+                                        <p style="line-height: 17px; padding: 8px 2px;">Lorem ipsum dolor sit amet, nulla ...</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                                        <a href="single.html">
+                                            <img src="assets/img/demo/small-proerty-2.jpg">
+                                        </a>
+                                        <span class="blg-date">12-12-2016</span>
+
+                                    </div>
+                                    <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
+                                        <h6> <a href="single.html">Add news functions </a></h6>
+                                        <p style="line-height: 17px; padding: 8px 2px;">Lorem ipsum dolor sit amet, nulla ...</p>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                        <div class="single-footer news-letter" style="width:400px; text-align: center;">
+                            <h4>Sosyal Medya Hesaplarımız!</h4>
+                            <div class="footer-title-line"></div>
+                            <p>Bizi sosyal medya hesaplarımızdan takip edin fırsatlardan haberdar olun!</p>
+
+
+
+                            <div class="social pull-right" style="width: 400px;">
+                                <ul style="text-align:center;">
+                                    <li><a class="wow fadeInUp animated" href="https://twitter.com/kimarotec"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="wow fadeInUp animated" href="https://www.facebook.com/kimarotec" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="wow fadeInUp animated" href="https://plus.google.com/kimarotec" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="wow fadeInUp animated" href="https://instagram.com/kimarotec" data-wow-delay="0.4s"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a class="wow fadeInUp animated" href="https://instagram.com/kimarotec" data-wow-delay="0.6s"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copy text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="pull-left">
+                        <span> (C) <a href="http://www.KimaroTec.com">KimaroTheme</a> , All rights reserved 2016  </span>
+                    </div>
+                    <div class="bottom-menu pull-right">
+                        <ul>
+                            <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.2s">Home</a></li>
+                            <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.3s">Property</a></li>
+                            <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.4s">Faq</a></li>
+                            <li><a class="wow fadeInUp animated" href="#" data-wow-delay="0.6s">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - RealEstateApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="assets/js/modernizr-2.6.2.min.js"></script>
+
+    <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/bootstrap-hover-dropdown.js"></script>
+
+    <script src="assets/js/easypiechart.min.js"></script>
+    <script src="assets/js/jquery.easypiechart.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script src="assets/js/wow.js"></script>
+
+    <script src="assets/js/icheck.min.js"></script>
+    <script src="assets/js/price-range.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
 </body>
 </html>

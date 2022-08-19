@@ -12,7 +12,7 @@ namespace RealEstateApp.Data
 
         }
 
-        public DbSet<Users> Users { get; set; }
-        public DbSet<InstitutionalUser> InstitutionalUsers { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<InstitutionalUser> InstitutionalUser { get; set; }
     }
 }
